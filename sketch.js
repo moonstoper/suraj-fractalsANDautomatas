@@ -6,7 +6,7 @@ let canvas;
 let r = [-1, 0, 1, 0, -1, 1, 1, -1]
 let c = [0, -1, 0, 1, -1, 1, -1, 1]
 let iter = 1;
-let colorset = ["#AB2C72","#F7E772","#F759B0","#40E6F7","##359FAB"]
+let colorset = ["#663980", "#883DFF", "#CC74FF", "#746080", "#883DFF"]
 
 function create2D(rows, cols) {
     let ar = new Array(rows);
@@ -48,7 +48,7 @@ function draw() {
         for (let j = 0; j < cols; j++) {
             if (lifegrid[i][j] === 1) {
                 // canvas.fillStyle="green"
-                fill(colorset[floor(random(5))])
+                fill(colorset[2])
                 rect(i * resolution, j * resolution, resolution - 1, resolution - 1);
                 stroke(255)
 
