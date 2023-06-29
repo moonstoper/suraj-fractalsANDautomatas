@@ -13,7 +13,7 @@ let heightTree ;
 function setup() {
 
     createCanvas(window.innerWidth, window.innerHeight)
-    heightTree = height>width?width:height
+    heightTree = window.innerHeight>window.innerWidth?window.innerWidth:window.innerHeight
     console.log("HI");
     angle = 0.33
 
@@ -22,6 +22,7 @@ function setup() {
 }
 
 function draw() {
+   
     background(000);
     stroke(255);
     fill(255)
@@ -41,9 +42,10 @@ function draw() {
         inc = true;
     }
  
+    // lh = 200
+    if(lh<heightTree/5) lh+=1;
     fractaldraw(lh, true)
-    
-    if (lh < heightTree/5) lh += 1
+    // console.log(lh)
 
 }
 
@@ -52,18 +54,18 @@ function fractaldraw(lh, l) {
 
     stroke(colorset[0])
     if (lh < 10) {
-        stroke(colorset[0]);
+        stroke(255);
         strokeWeight(1)
         if (l)
-            fill(colorset[1]);
+            fill(255);
         else {
-            fill(colorset[2])
+            fill(255)
         }
-        ellipse(air, -lh, 10, 10);
+        ellipse(air, -lh, 2, );
         line(0, 0, air, -lh);
         return
     }
-
+    strokeWeight(lh/8)
     line(0, 0, air, -lh)
     translate(air, -lh)
 
@@ -71,6 +73,15 @@ function fractaldraw(lh, l) {
     rotate(angle)
     fractaldraw(lh * .75, false)
     pop()
+    // push()
+    // rotate(-0.42)
+    // fractaldraw(lh * .75, false)
+    // pop()
+    // push()
+    // push()
+    // rotate(0)
+    // fractaldraw(lh * .5, true)
+    // pop()
     push()
     rotate(-angle)
     fractaldraw(lh * .75, true)

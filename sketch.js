@@ -1,4 +1,4 @@
-let resolution = window.innerHeight/50;
+let resolution = window.innerHeight/80;
 let rows;
 let cols;
 let lifegrid;
@@ -24,7 +24,7 @@ function setup() {
     cols = ceil(window.innerHeight/ resolution)
     console.log("HII")
     
-   
+   frameRate(5)
    
     lifegrid = create2D(rows, cols)
     for (let index = 0; index < rows; index++) {
@@ -95,4 +95,6 @@ function draw() {
 
     }
 
-
+function mousePressed() {
+    
+}
