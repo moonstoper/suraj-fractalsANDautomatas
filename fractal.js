@@ -23,7 +23,7 @@ function setup() {
 
 function draw() {
    
-    background(000);
+    background(0);
     stroke(255);
     fill(255)
     translate(width / 2, height)
